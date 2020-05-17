@@ -1,5 +1,5 @@
-//Leer el formulario
-
+//Creation of the Develop branch
+//Read the form
 const formulario = document.querySelector('#formulario');
 
 
@@ -7,20 +7,20 @@ const formulario = document.querySelector('#formulario');
 formulario.addEventListener('submit', (e) => {
      e.preventDefault();
 
-     //Leer la moneda seleccionada
+     //Read the selected currency
      const monedaSelect = document.querySelector('#moneda');
      const monedaSeleccionada = monedaSelect.options[monedaSelect.selectedIndex].value;
 
-
-     //Leer la criptomoneda seleccionada
+     //Read the selected cryptocurrency
      const cryptomonedaSelect = document.querySelector('#moneda');
      const cryptomonedaSeleccionada = cryptomonedaSelect.options[cryptomonedaSelect.selectedIndex].value;
      
-     //comprobar que ambos campos tengan algo seleccionado
+     //check that both fields have something selected
      if(monedaSeleccionada === '' || cryptomonedaSeleccionada === ''){
-          //Arrojar una alerta de error
+          //Launch an error alert
+
      } else {
-          //Todo bien, consultar la API
+          //All right, check the API
      }
      console.log(monedaSeleccionada);
      console.log(cryptomonedaSeleccionada);
