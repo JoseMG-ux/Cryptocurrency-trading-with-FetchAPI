@@ -4,8 +4,6 @@ const Cotizador = new API('your api key')//In the https://www.cryptocompare.com/
 
 const ui = new Interfaz();//Interface instance (ui.js)
 
-Cotizador.obtenerMonedasAPI();
-
 //Read the form
 const formulario = document.querySelector('#formulario');
 
