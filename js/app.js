@@ -1,6 +1,10 @@
 //Creation of the Develop branch
-const ui = new Interfaz();//Instancia de la Interfaz (ui.js)
 
+const Cotizador = new API('your api key')//In the https://www.cryptocompare.com/cryptopian/api-keys
+
+const ui = new Interfaz();//Interface instance (ui.js)
+
+Cotizador.obtenerMonedasAPI();
 
 //Read the form
 const formulario = document.querySelector('#formulario');
@@ -20,7 +24,7 @@ formulario.addEventListener('submit', (e) => {
      
      //check that both fields have something selected
      if(monedaSeleccionada === '' || cryptomonedaSeleccionada === ''){
-          //Launch an error alert
+          //Launch an error alert (ui.js)
           ui.mostrarMensaje('Both fields are mandatory.', 'alert bg-danger text-center');
      } else {
           //All right, check the API
