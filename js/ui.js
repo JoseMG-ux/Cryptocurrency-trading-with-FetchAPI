@@ -14,7 +14,10 @@ class Interfaz{
      construirSelect(){
           Cotizador.obtenerMonedasAPI()
           .then(monedas =>{
-               console.log(monedas);
+               for (const [key, value] of Object.entries(monedas.monedas.Data)){
+                    console.log(key)
+               }
+             
           })
      }
 
