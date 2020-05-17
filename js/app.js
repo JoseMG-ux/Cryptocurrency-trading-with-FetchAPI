@@ -1,4 +1,7 @@
 //Creation of the Develop branch
+const ui = new Interfaz();//Instancia de la Interfaz (ui.js)
+
+
 //Read the form
 const formulario = document.querySelector('#formulario');
 
@@ -18,7 +21,7 @@ formulario.addEventListener('submit', (e) => {
      //check that both fields have something selected
      if(monedaSeleccionada === '' || cryptomonedaSeleccionada === ''){
           //Launch an error alert
-
+          ui.mostrarMensaje('Both fields are mandatory.', 'alert bg-danger text-center');
      } else {
           //All right, check the API
      }
