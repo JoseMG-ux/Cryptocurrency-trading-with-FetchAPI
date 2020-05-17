@@ -14,10 +14,18 @@ class Interfaz{
      construirSelect(){
           Cotizador.obtenerMonedasAPI()
           .then(monedas =>{
+               //Select the selection and create it
+
+               const select = document.querySelector('#criptomoneda');
+
+               //Iterate for API results
                for (const [key, value] of Object.entries(monedas.monedas.Data)){
-                    console.log(key)
+                    //Add symbol and name as options
+                    const opcion = document.createElement('option');
+                    opcion.value = value.Symbol;
+                    opcion.appendChild(document.createTextNode(value.CoinName));
+                    select.appendChild(opcion);
                }
-             
           })
      }
 
