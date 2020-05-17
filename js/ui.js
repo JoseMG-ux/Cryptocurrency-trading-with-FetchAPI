@@ -2,6 +2,22 @@
 
 class Interfaz{
 
+
+     constructor(){
+          this.init();
+
+     }
+     init(){
+          this.construirSelect();
+     }
+
+     construirSelect(){
+          Cotizador.obtenerMonedasAPI()
+          .then(monedas =>{
+               console.log(monedas);
+          })
+     }
+
      //Show error message or result ...
      mostrarMensaje(mensaje, clases){
           const div = document.createElement('div');
