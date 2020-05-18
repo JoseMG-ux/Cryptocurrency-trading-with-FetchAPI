@@ -46,6 +46,13 @@ class Interfaz {
   mostrarResultado(resultado, moneda, crypto) {
     const datosMonedas = resultado[crypto][moneda];
 
+    //hide it the results of solicit other
+    const resultadoAnterior = document.querySelector('#resultado > div');
+
+    if(resultadoAnterior){
+      resultadoAnterior.remove();
+    }
+
     console.log(datosMonedas);
     //Reduce price digits
      let precio = datosMonedas.PRICE.toFixed(2),//shorten the decimals to 2
@@ -68,8 +75,24 @@ class Interfaz {
      </div>
     `;
 
-    //Insert Result
 
-    document.querySelector("#resultado").innerHTML = templateHTML;
+    //Show spinner 
+    this.mostrarocultarSpinner('block');
+
+    //Insert Result
+    setTimeout(() => {
+      document.querySelector("#resultado").innerHTML = templateHTML;
+      
+      //Hide it spinner if solicite other results
+      this.mostrarocultarSpinner('none')
+    }, 3000);
+   
   }
+
+  //Shows the charging spinner
+  mostrarocultarSpinner(vista){
+    const spinner = document.querySelector('.contenido-spinner');
+    spinner.style.display = vista;
+  }
+
 }
