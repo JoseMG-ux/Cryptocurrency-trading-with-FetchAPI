@@ -1,47 +1,49 @@
 //Interfaz de usuario
 
-class Interfaz{
+class Interfaz {
+  constructor() {
+    this.init();
+  }
+  init() {
+    this.construirSelect();
+  }
 
+  construirSelect() {
+    Cotizador.obtenerMonedasAPI().then((monedas) => {
+      //Select the selection and create it
 
-     constructor(){
-          this.init();
+      const select = document.querySelector("#criptomoneda");
 
-     }
-     init(){
-          this.construirSelect();
-     }
+      //Iterate for API results
+      for (const [key, value] of Object.entries(monedas.monedas.Data)) {
+        //Add symbol and name as options
+        const opcion = document.createElement("option");
+        opcion.value = value.Symbol;
+        opcion.appendChild(document.createTextNode(value.CoinName));
+        select.appendChild(opcion);
+      }
+    });
+  }
 
-     construirSelect(){
-          Cotizador.obtenerMonedasAPI()
-          .then(monedas =>{
-               //Select the selection and create it
+  //Show error message or result ...
+  mostrarMensaje(mensaje, clases) {
+    const div = document.createElement("div");
+    div.className = clases;
+    div.appendChild(document.createTextNode(mensaje));
 
-               const select = document.querySelector('#criptomoneda');
+    //Select messages
+    const divMensaje = document.querySelector(".mensajes");
+    divMensaje.appendChild(div);
 
-               //Iterate for API results
-               for (const [key, value] of Object.entries(monedas.monedas.Data)){
-                    //Add symbol and name as options
-                    const opcion = document.createElement('option');
-                    opcion.value = value.Symbol;
-                    opcion.appendChild(document.createTextNode(value.CoinName));
-                    select.appendChild(opcion);
-               }
-          })
-     }
+    //Show content
+    setTimeout(() => {
+      document.querySelector(".mensajes div").remove();
+    }, 3000);
+  }
 
-     //Show error message or result ...
-     mostrarMensaje(mensaje, clases){
-          const div = document.createElement('div');
-          div.className = clases;
-          div.appendChild(document.createTextNode(mensaje));
-          
-          //Select messages
-          const divMensaje = document.querySelector('.mensajes');
-          divMensaje.appendChild(div);
+  //Print the result of the quote
 
-          //Show content
-          setTimeout(() => {
-               document.querySelector('.mensajes div').remove(); 
-          }, 3000);
-     }
+  mostrarResultado(resultado, moneda, crypto) {
+    console.log(resultado[crypto][moneda]);
+  }
 }
