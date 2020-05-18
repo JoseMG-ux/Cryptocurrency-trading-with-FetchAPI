@@ -45,13 +45,24 @@ class Interfaz {
   //Print the result of the quote
   mostrarResultado(resultado, moneda, crypto) {
     const datosMonedas = resultado[crypto][moneda];
-    //Build template
 
+    console.log(datosMonedas);
+    //Reduce price digits
+     let precio = datosMonedas.PRICE.toFixed(2),//shorten the decimals to 2
+      porcentaje = datosMonedas.CHANGEPCTDAY.toFixed(2),//Shows the variation of the last day.
+      actualizado = new Date(datosMonedas.LASTUPDATE * 1000).toLocaleDateString('es-PA');//Show the last update
+      //('es-PA) is the code of date in ur country 
+
+
+    //Build template
     let templateHTML = `
      <div class="card bg-warning">
           <div class="card-body text-light">
                <h2 class="card-title">Resultado:</h2>
-               <p>El Precio de ${datosMonedas.FROMSYMBOL} a moneda ${datosMonedas.TOSYMBOL} es de: ${datosMonedas.PRICE}
+               <p>El Precio de ${datosMonedas.FROMSYMBOL} a moneda ${datosMonedas.TOSYMBOL} es de: ${precio}</p>
+
+               <p>Variacion del ultimo dia: % ${porcentaje}</p>
+               <p>Ultima actualizacion: ${actualizado}</p>
           
           </div>
      </div>
