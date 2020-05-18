@@ -14,7 +14,7 @@ class API {
 
     return {
       monedas, //Coins
-    };
+    }
   }
 
   async obtenerValores(moneda, criptomoneda) {
@@ -27,6 +27,6 @@ class API {
 
     return {
       resultado,
-    };
+    }
   }
 }
