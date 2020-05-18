@@ -32,7 +32,11 @@ formulario.addEventListener("submit", (e) => {
     //All right, check the API
     Cotizador.obtenerValores(monedaSeleccionada, cryptomonedaSeleccionada).then(
       (data) => {
-        console.log(data);
+        ui.mostrarResultado(
+          data.resultado.RAW,
+          monedaSeleccionada,
+          cryptomonedaSeleccionada
+        );
       }
     );
   }
