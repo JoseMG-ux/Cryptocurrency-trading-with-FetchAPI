@@ -6,14 +6,19 @@ body {
 h1 {
     font-size: 34px;
     color: white;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
 }
 form {
     margin: 50px auto;
 }
 .contenido-principal {
+    border-bottom-left-radius: 3em ;
+    border-bottom-right-radius:3em ;
+    border-top-left-radius: 3em;
+    border-top-right-radius: 3em;
     margin: 50px auto;
-    background-color: white;
+    background-color: rgb(94, 134, 172);
     -webkit-box-shadow: -1px 20px 52px -13px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 20px 52px -13px rgba(0,0,0,0.75);
     box-shadow: -1px 20px 52px -13px rgba(0,0,0,0.75);
@@ -79,3 +84,19 @@ form {
       -webkit-transform: scale(1.0);
     }
   }
+  footer {
+    
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  footer a {
+    text-decoration: none;
+    font-weight: bold;
+    
+  }
+  
+  a {
+    color:white;
+  }
+ 
