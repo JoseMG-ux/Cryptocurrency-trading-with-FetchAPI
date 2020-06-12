@@ -53,7 +53,7 @@ form {
     display: inline-block;
     position: absolute;
     top: 0;
-    background-color: rgb(8, 116, 116);
+    background-color: rgb(255, 255, 255);
     border-radius: 100%;
     
     -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
@@ -100,3 +100,9 @@ form {
     color:white;
   }
  
+  .card {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+  }
