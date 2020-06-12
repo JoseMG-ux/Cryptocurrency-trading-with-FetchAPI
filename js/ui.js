@@ -63,7 +63,7 @@ class Interfaz {
 
     //Build template
     let templateHTML = `
-     <div class="card bg-warning">
+     <div class="card bg-success">
           <div class="card-body text-light">
                <h2 class="card-title">Resultado:</h2>
                <p>El Precio de ${datosMonedas.FROMSYMBOL} a moneda ${datosMonedas.TOSYMBOL} es de: ${precio}</p>
